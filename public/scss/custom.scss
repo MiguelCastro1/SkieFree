@@ -1,0 +1,247 @@
+
+.navbar-brand {
+    font-size: x-large;
+    padding-top: 13px;
+}
+
+.main-body{      
+   // font-size: 2.5rem;
+    margin-top: 92px;
+
+    .about{
+        text-align: center;
+
+        h1{
+            font-size: x-large;
+            font-weight: bold;
+        }
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+
+      
+        .titulo{
+            margin-top: 1rem;
+            font-weight: bold;
+            font-size: large;
+        }
+
+        p{
+            margin: 10px 20% auto 20%;
+        }
+    }
+
+    .curso_index{
+        .options{
+            text-align: right;
+
+            a{
+                padding-left: 4px;
+            }
+        }
+        .page-header{
+            display: flex;
+            justify-content: space-between;
+            button{
+                height: 100%;
+            }
+            
+        }
+
+
+    }
+    
+    .create{
+     
+        width: 65%;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        
+        form [type='submit']{
+            font-size: large;
+            width: 20%;
+        }
+
+        form [type='text']{
+            font-size: medium;
+            
+        }
+        legend{
+            font-size: large;
+            font-weight: bold;
+            color: white;
+        }
+        textarea{
+            font-weight: normal;
+            font-size: medium;
+        }
+        .form-check label{
+            font-weight: normal;
+            font-size: medium;
+            
+        }
+    }
+    
+    .read_card{
+        width: 40%;
+        .card-body{
+            
+        }
+       
+    }
+
+    .card-header{
+        display: flex;
+        justify-content: space-between;
+
+        div a{
+            padding-left: 4px;
+            color: black;
+        }
+    }
+
+    .invalid-feedback{
+        display: block;
+    }
+    #game_container{
+
+        #montanha {
+            border: 1px solid black;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #container{
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+        }
+        
+        #skier {
+            position: absolute;
+        }
+        
+        #placar{
+            border: 3px solid black;
+            background-color: lightskyblue;
+            margin-left: 2%;
+            text-align: center;
+            padding: 10px;
+
+        }
+        
+        #placar {
+            h2{
+            color: black;
+            font-weight: bold;
+            }
+        }
+        
+        #vidas{
+            color: crimson;
+            font-weight: bold;
+            
+        }
+        
+        #metros{
+            color: blueviolet;
+            font-weight: bold;
+        }
+        
+        
+        .arvore {
+            background-image: url(../img/obstacles.png);
+            background-position: 0px -31px;
+            width: 28px;
+            height: 32px;
+            position: absolute;
+        }
+        
+        
+        .arbusto {
+            background-image: url(../img/obstacles.png);
+            background-position: -24px -103px;
+            width: 22px;
+            height: 27px;
+            position: absolute;
+        }
+        
+        .rocha {
+            background-image: url(../img/obstacles.png);
+            background-position: -30px -52px;
+            width: 23px;
+            height: 11px;
+            position: absolute;
+        }
+        
+        .toco {
+            background-image: url(../img/obstacles.png);
+            background-position: -253px -52px;
+            width: 16px;
+            height: 11px;
+            position: absolute;
+        }
+        
+        .cachorro {
+            background-image: url(../img/skier.png);
+            background-position: -66px -208px;
+            width: 17px;
+            height: 15px;
+            position: absolute;
+        }
+        
+        .arvore_grande {
+            background-image: url(../img/obstacles.png);
+            background-position: -95px -66px;
+            width: 33px;
+            height: 64px;
+            position: absolute;
+        }
+        
+        .para-frente {
+            background-image: url(../img/skier.png);
+            background-position: -67px -2px;
+            width: 15px;
+            height: 32px;
+        }
+        
+        .para-direita {
+            background-image: url(../img/skier.png);
+            background-position: -26px -6px;
+            width: 22px;
+            height: 28px;
+        }
+        
+        .para-esquerda {
+            background-image: url(../img/skier.png);
+            background-position: -26px -43px;
+            width: 22px;
+            height: 28px;
+        }
+        
+        .caido{
+            background-image: url(../img/skier.png);
+            background-position: -149px -276px;
+            width: 33px;
+            height: 25px;
+        }
+        
+        .morto{
+            background-image: url(../img/skier.png);
+            background-position: -242px -3px;
+            width: 30px;
+            height: 29px;
+        }
+        
+        .cogumelo{
+            background-image: url(../img/obstacles.png);
+            background-position: -271px -52px;
+            width: 8px;
+            height: 11px;
+        }
+    }
+}
+
+
+

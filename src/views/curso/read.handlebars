@@ -1,0 +1,50 @@
+<div class='read_card'>
+<div class="card text-white bg-secondary mb-3">
+    <div class="card-header">
+        {{curso.nome}}
+        <div>
+            <a href="/curso/update/{{curso.id}} "style='color:blue'> <i class="fa fa-solid fa-pencil"> </i>  </a>
+            <a href="/" style='color:red'  data-bs-toggle="modal" data-bs-target=".modal"> <i class="fa fa-regular fa-trash"> </i> </a>
+        </div>
+    </div>    
+        
+    <div class="card-body">
+       <div>
+           <b>Sigla:</b> {{curso.sigla}} <br>
+           <b>Nome: </b> {{curso.nome}}<br> 
+           <b>Descrição: </b> {{curso.descricao}}<br>
+           <b>Area:</b> {{curso.Area.nome}}<br>
+
+       </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="bs-component">
+    <div class="modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Deletar Curso</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>Tem certeza que você deseja deletar o curso <b>{{curso.nome}}</b>? Essa operação não poderá ser desfeita.</p>
+        </div>
+        <div class="modal-footer">
+            <button id = 'botao-confirma' type="button" class="btn btn-primary">Confirmar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<script>
+    const botao = document.getElementById('botao-confirma');
+    botao.onclick = function(){
+        apagarCurso({{curso.id}});
+    }
+</script>
