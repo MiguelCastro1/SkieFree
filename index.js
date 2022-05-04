@@ -3,8 +3,18 @@ import morgan from "morgan";
 import { engine } from "express-handlebars";
 import router from "./src/router/router";
 import sass from 'node-sass-middleware';
+import cookieParser from 'cookie-parser';
+import csurf from 'csurf';
+import {v4 as uuidv4} from 'uuid';
+// Arquivo app.js
+import session from 'express-session';
+
+//dotenv.config();
 const app = express();
-const PORT = 3030;
+
+
+
+const PORT = process.env.PORT || 3030;
 
 app.engine('handlebars', engine({
     helpers: require(`${__dirname}/src/views/helpers/helpers`),
@@ -32,7 +42,25 @@ app.use("/js", [
 ]);
 
 app.use(express.urlencoded({extended: false}));
-//app.use(morgan('combined'));
+app.use(cookieParser());
+app.use(csurf({ cookie: true }));
+
+app.use(session({
+    genid: (req) => {
+        return uuidv4() // usamos UUIDs para gerar os SESSID
+    },
+        secret: 'Hi9Cf#mK98',
+        resave: false,
+        saveUninitialized: true
+    })
+);
+
+app.use((req, res, next) => {
+    res.locals.isLogged = 'uid' in req.session;
+    next();
+});
+
+app.use(morgan('combined'));
 app.use(router);
 app.use((req,res) => {
     res.status(404).send('Erro 404 Not Found');

@@ -1,0 +1,31 @@
+<div class='signup'>
+<h1>Acesse sua Conta</h1>
+
+<form action="/login" method="post">
+    <input type="hidden" name="_csrf" value="{{csrf}}"/> 
+
+    <div class="form-group">
+        <label for="email" class="form-label mt-4">Endereço de E-mail</label>
+        <input type="text" class="form-control" id="email" name='email'  value = "{{user.email}}" placeholder="Endereço de E-mail">
+        <div class="invalid-feedback">{{error}}</div>
+    </div>
+
+
+    <div class="form-group">
+         <label for="senha" class="form-label mt-4">Senha</label>
+        <input type="password" class="form-control" id="senha" name='senha' value = "{{user.senha}}" placeholder="Senha">
+        <div class="invalid-feedback">{{error}}</div>
+    </div>
+
+    <div class="form-group">
+        <label for = 'logado' class="form-check-label">
+        <input type="checkbox" class="form-check-input" name="logado" id="logado">
+            Mantenha-me logado
+        </label> 
+    </div>
+
+    <button type="submit" class="btn btn-primary">Acessar</button>
+        
+</form>
+
+</div>

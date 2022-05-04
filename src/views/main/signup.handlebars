@@ -1,0 +1,54 @@
+<div class='signup'>
+<h1>Criar conta</h1>
+<h3>Deseja criar uma conta? Basta preencher o formulário abaixo</h3>
+
+<form action="/signup" method="post">
+    <input type="hidden" name="_csrf" value="{{csrf}}"/> 
+
+    <div class="form-group">
+        <label for="nome" class="form-label mt-4">Nome Completo</label>
+        <input type="text" class="form-control" id="nome" name='nome'  value = "{{user.nome}}" placeholder="Digite o seu nome">
+        <div class="invalid-feedback">{{printError error 'nome'}}</div>
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="form-label mt-4">Endereço de E-mail</label>
+        <input type="text" class="form-control" id="email" name='email'  value = "{{user.email}}" placeholder="Digite o seu e-mail">
+        <div class="invalid-feedback">{{printError error 'email'}}</div>
+    </div>
+
+    <div class="form-group">
+    <label for="cursoId" class="form-label mt-4">Seu curso na UFAM</label>
+    <select class="form-select" id="cursoId" name='cursoId' value="1">
+        <option value='0'> Selecione seu curso ...</option>
+        {{#each cursos}}
+        <option value="{{id}}"> {{nome}} </option>
+        {{/each}}
+    </select>
+    </div>
+
+    <div class="form-group">
+        <label for="senha" class="form-label mt-4">Senha</label>
+        <input type="password" class="form-control" id="senha" name='senha' value = "{{user.senha}}" placeholder="Digite a senha">
+        <div class="invalid-feedback">{{printError error 'senha'}}</div>
+    </div>
+
+    <div class="form-group">
+        <label for="confirm_password" class="form-label mt-4">Confirme a Senha</label>
+        <input type="password" class="form-control" id="confirm_password" name='confirm_password'  placeholder="Confirme a senha">
+         <div class="invalid-feedback">{{confirm}}</div>
+  </div>
+
+    <div class="form-group">
+        <label for = 'termos' class="form-check-label">
+        <input type="checkbox" class="form-check-input" name="termos" id="termos">
+            Eu li e concordo com os termos de serviço
+        </label>
+          <div class="invalid-feedback">{{termos}}</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Criar conta</button>
+        
+</form>
+
+</div>

@@ -13,7 +13,10 @@ exports.index = async(req,res) => {
 
 exports.create = async(req,res) => {
     if(req.route.methods.get){
-        res.render("curso/create", {curso: {sigla:'sigla', nome:'nome', areaId:1}, erro:"nome"});
+        res.render("curso/create", { 
+            curso:{areaId:1},
+            csrf: req.csrfToken()
+        });
     }else{
         try{
             await Curso.create({
@@ -45,7 +48,8 @@ exports.update = async(req,res) => {
     if(req.route.methods.get){
       
         res.render("curso/update", 
-            {curso: curso.toJSON()
+            {curso: curso.toJSON(),
+            csrf: req.csrfToken()
         });
     }else{
         try{
